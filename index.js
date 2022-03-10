@@ -1,102 +1,53 @@
-const daily = document.querySelector('.daily');
-const monthly = document.querySelector('.monthly');
-const weekly = document.querySelector('.weekly');
-const times = document.querySelectorAll('.times');
 
-let timeline = 'daily';
-let timespan;
 
-const workhrs = document.querySelector('.workhrs');
-const worktime = document.querySelector('.worktime');
-const playhrs = document.querySelector('.playhrs');
-const playtime = document.querySelector('.playtime');
-const studyhrs = document.querySelector('.studyhrs');
-const studytime = document.querySelector('.studytime');
-const exercisehrs = document.querySelector('.exercisehrs');
-const exercisetime = document.querySelector('.exercisetime');
-const socialhrs = document.querySelector('.socialhrs');
-const socialtime = document.querySelector('.socialtime');
-const selfhrs = document.querySelector('.selfhrs');
-const selftime = document.querySelector('.selftime');
+$(document).on('click','.time', function() {
 
-let my_data = JSON.parse(data)
+  $('.time').removeClass('active');
+  $(this).addClass('active');
 
-console.log(my_data);
+});
 
-daily.addEventListener('click',()=>{
-    time.forEach(ele => {
-       if(ele.classList.contains('daily')){
-           ele.classList.add('active');
-       } else{
-           ele.classList.remove('active')
-       }
-    })
-    timeline = "daily"
-    setData();
-})
+$('.daily').on('click', function () {
+  $('.workhrs').html('5hrs');
+  $('.worktime').html('Last Week - 7hrs');
+  $('.playhrs').html('1hrs');
+  $('.playtime').html('Last Week - 2hrs');
+  $('.studyhrs').html('0hrs');
+  $('.studytime').html('Last Week - 1hrs');
+  $('.exercisehrs').html('1hrs');
+  $('.exercisetime').html('Last Week - 1hrs');
+  $('.socialhrs').html('1hrs');
+  $('.socialtime').html('Last Week - 3hrs');
+  $('.selfhrs').html('0hrs');
+  $('.selftime').html('Last Week - 1hrs');
+});
 
-weekly.addEventListener('click',()=>{
-    time.forEach(ele => {
-        if(ele.classList.contains('weekly')){
-            ele.classList.add('active');
-        } else{
-            ele.classList.remove('active')
-        }
-     })
-    timeline = "weekly"
-    setData();
-})
+$('.monthly').on('click', function () {
+  $('.workhrs').html('103hrs');
+  $('.worktime').html('Last Week - 128hrs');
+  $('.playhrs').html('23hrs');
+  $('.playtime').html('Last Week - 29hrs');
+  $('.studyhrs').html('13hrs');
+  $('.studytime').html('Last Week - 19hrs');
+  $('.exercisehrs').html('11hrs');
+  $('.exercisetime').html('Last Week - 18hrs');
+  $('.socialhrs').html('21hrs');
+  $('.socialtime').html('Last Week - 23hrs');
+  $('.selfhrs').html('7hrs');
+  $('.selftime').html('Last Week - 11hrs');
+});
 
-monthly.addEventListener('click',()=>{
-    time.forEach(ele => {
-        if(ele.classList.contains('monthly')){
-            ele.classList.add('active');
-        } else{
-            ele.classList.remove('active')
-        }
-     })
-    timeline = "monthly"
-    setData();
-})
-
-function setData(){
-    switch(timeline){
-        case 'daily':
-            timespan = "Day";
-            break
-        case 'weekly':
-            timespan = "Week";
-            break
-        case 'monthly':
-            timespan = "Month";
-            break
-        default:
-            timespan = "";
-    }
-    my_data.forEach(element => {
-        if(element.title == "Work"){
-          workhrs.innerText = `${element.timeframes[timeline].current}hrs`;
-          worktime.innerText = `Last ${timespan} - ${element.timeframes[timeline].previous}hrs`;
-        }
-        if(element.title == "Play"){
-            playhrs.innerText = `${element.timeframes[timeline].current}hrs`;
-            playtime.innerText = `Last ${timespan} - ${element.timeframes[timeline].previous}hrs`;
-          }
-        if(element.title == "Study"){
-            studyhrs.innerText = `${element.timeframes[timeline].current}hrs`;
-            studytime.innerText = `Last ${timespan} - ${element.timeframes[timeline].previous}hrs`;
-          }
-          if(element.title == "Exercise"){
-            exercisehrs.innerText = `${element.timeframes[timeline].current}hrs`;
-            exercisetime.innerText = `Last ${timespan} - ${element.timeframes[timeline].previous}hrs`;
-          }
-          if(element.title == "Social"){
-              socialhrs.innerText = `${element.timeframes[timeline].current}hrs`;
-              socialtime.innerText = `Last ${timespan} - ${element.timeframes[timeline].previous}hrs`;
-            }
-          if(element.title == "Self Care"){
-              selfhrs.innerText = `${element.timeframes[timeline].current}hrs`;
-              selftime.innerText = `Last ${timespan} - ${element.timeframes[timeline].previous}hrs`;
-            }
-    });
-}
+$('.weekly').on('click', function () {
+  $('.workhrs').html('32hrs');
+  $('.worktime').html('Last Week - 36hrs');
+  $('.playhrs').html('10hrs');
+  $('.playtime').html('Last Week - 8hrs');
+  $('.studyhrs').html('4hrs');
+  $('.studytime').html('Last Week - 7hrs');
+  $('.exercisehrs').html('4hrs');
+  $('.exercisetime').html('Last Week - 5hrs');
+  $('.socialhrs').html('5hrs');
+  $('.socialtime').html('Last Week - 10hrs');
+  $('.selfhrs').html('2hrs');
+  $('.selftime').html('Last Week - 2hrs');
+});
