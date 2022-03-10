@@ -165,11 +165,26 @@ main {
   background-color: hsl(43, 84%, 65%);
 }
 
+footer {
+  color: white;
+  font-size: 12px;
+  text-align: center;
+}
 
-@media (max-width: 800px) {
+.footer a {
+  text-decoration: none;
+  color: yellow;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+
+@media (max-width: 500px) {
 
 body {
   display: flex;
+  flex-direction: column;
 }
 
 
